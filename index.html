@@ -1,0 +1,113 @@
+<html
+xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de" >
+
+<head>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+        .auto-style1 {
+            font-size: 24pt;
+        }
+        .heading1{
+            font-family:Arial;
+            font-size: 18pt;
+            padding-bottom:30px;
+            font-weight:bold;
+            padding-right:50px;
+        }
+        .heading2{
+            font-family:Arial;
+            font-size: 22pt;
+            padding-bottom:30px;
+            font-weight:bold;
+            padding-right:70px;
+        }
+        .heading3{
+            font-family:Arial;
+            font-size: 24pt;
+            padding-bottom:30px;
+            font-weight:bold;
+            padding-right:70px;
+        }
+
+        .style1{
+            font-family:Arial;
+            font-size: 18pt;
+            padding-bottom:30px;
+            
+        }
+    </style>
+</head>
+<body style="font-family:arial">
+    <div style="width: 1100px; margin-top: 50px auto; margin-left:50px; overflow: hidden;float:left">
+        <img src="image001.png"; style="width:200px"/>
+        <div style="width: 1100px; border-bottom-style: solid; border-bottom-color: inherit; border-bottom-width: medium;" class="auto-style1"><strong>Bescheinigung &#252ber Durchf&#252hrung eines SARS-CoV-2 Antigentests</strong></div>
+    <div>
+        <br /><br /><br /><br />
+        <table>
+<thead>
+  <tr>
+    <td class="heading1">Name getestete Person:</td>
+    <td id="name_el" class="style1">Name</td>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="heading1">Geburtsdatum:</td>
+    <td id="birthday_el" class="style1">Birthday</td>
+  </tr>
+  <tr>
+    <td class="heading1">Adresse:</td>
+    <td id="address_el" class="style1">adress</td>
+  </tr>
+  <tr>
+    <td class="heading1">Durchf&#252hrungsdatum:</td>
+    <td class="style1"><span id="date_el">Date</span><span>&#160&#160&#160&#160&#160</span> <span>09:34</span></td>
+  </tr>
+  <tr>
+    <td class="heading1">Testmaterial/Verfahren: </td>
+    <td  style="font-size:13pt">Safecare Biotech COVID-19 Antigen Rapid Test Kit (Swab) <br />
+        <div style="font-style:italic">Zulassungs-ID gem&#228&#223 BfArM: AT199/20<br />
+        Sensitivit&#228t 97,04% (>90%), Spezifit&#228t 99,44% (>97%)</div>
+ </td>
+  </tr>
+  <tr>
+    <td><br/><br/><br/></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="heading2">Ergebnis:</td>
+    <td class="heading3"> <div style="border:solid; border-width:5px; padding:20px;width:150px">NEGATIV </div></td>
+      <td><img src="image003.png" /></td>
+  </tr>
+
+</tbody>
+</table>
+        
+        <br />
+        <br />
+
+        <div>Dieses Schreiben wurde maschinell erstellt und ist ohne Unterschrift g&#252ltig.</div>
+        <br /><br />
+            <div>
+        Wir weisen darauf hin, dass Covid-19 Antigen Tests nicht zu 100% sicher sind und lediglich einen Momentaufnahme abbilden.<br />
+        Bei einem positiven Ergebnis muss sich die Person unmittelbar in Quarant&#228ne begeben. Dies gilt auch f&#252r Haushaltsangeh&#252rige von Personen mit einem positiven Schnelltest. Die Quarant&#228ne darf erst beendet werden, wenn ein nachfolgender PCR-Test ein negatives Ergebnis hat. Die positiv getestete Person hat zur Best&#252tigung oder auch Widerlegung Anspruch auf einen PCR-Test.
+   </div>
+        </div>
+    </div>
+</body>
+    <script>
+        //const queryString = window.location.search;
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const birthday = urlParams.get('birthday');
+        const address= urlParams.get('address');
+        //alert(myParam);
+        var today = new Date();
+        var date = today.getDate()+ "." + (today.getMonth()+1) + "." + today.getFullYear();
+        //alert(date);
+        document.getElementById("date_el").innerText = date;
+        document.getElementById("name_el").innerText = name;
+        document.getElementById("birthday_el").innerText = birthday;
+        document.getElementById("address_el").innerText = address;
+    </script>
+</html>
