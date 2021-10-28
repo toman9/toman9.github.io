@@ -2,6 +2,13 @@
 xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de" >
 
 <head>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const birthday = urlParams.get('birthday');
+        const address = urlParams.get('address');
+
+    </script>
     <meta charset="utf-8"/>
     <style type="text/css">
         .auto-style1 {
@@ -33,6 +40,11 @@ xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de" >
             font-family:Arial;
             font-size: 18pt;
             padding-bottom:30px;
+            
+        }
+                .style2{
+            font-family:Arial;
+            font-size: 12pt;
             
         }
     </style>
@@ -77,19 +89,32 @@ xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de" >
   <tr>
     <td class="heading2">Ergebnis:</td>
     <td class="heading3"> <div style="border:solid; border-width:5px; padding:20px;width:150px">NEGATIV </div></td>
-      <td><img src="image003.png" /></td>
+      <td><img src="image2.png" /></td>
   </tr>
+</tbody>
+</table>
+        <br />
+        <div style="width: 1100px; border-bottom-style: solid; border-bottom-color: inherit; border-bottom-width:thin;" class="auto-style1"><strong></strong></div>
+        <table>
+            <tbody>
+      <tr>
+    <td><img id="qrcode" src="https://chart.googleapis.com/chart?cht=qr&choe=UTF-8&chs=200x200&chl=" /></td>
+    <td> <div class="style1" style="font-weight:bold">So verifizieren Sie die Echtheit der Bescheinigung:<br /> </div>
+        1. Scannen Sie den QR-Code mit der Kamera Ihres Smartphones oder Tablets<br />
+        2. Es erscheint ein Link, dem Sie folgen <br />
+        3. Wenn die Daten in dieser Bescheinigung und elektronisch angeziegeten Daten identisch sind, dann ist diese Bescheinigung echt.
 
+    </td>
+  </tr>
 </tbody>
 </table>
         
         <br />
         <br />
 
-        <div style="font-size:13pt">Dieses Schreiben wurde maschinell erstellt und ist ohne Unterschrift g&#252ltig.</div>
+        <div class="style2">Dieses Schreiben wurde maschinell erstellt und ist ohne Unterschrift g&#252ltig.
         <br /><br />
-            <div style="font-size:13pt">
-        Wir weisen darauf hin, dass Covid-19 Antigen Tests nicht zu 100% sicher sind und lediglich einen Momentaufnahme abbilden.<br />
+        Wir weisen darauf hin, dass Covid-19 Antigen Tests nicht zu 100% sicher sind und lediglich einen Momentaufnahme abbilden. Der Test wurde nicht von medizinischem Fachpersonal durchgef&#252hrt.
         Bei einem positiven Ergebnis muss sich die Person unmittelbar in Quarant&#228ne begeben. Dies gilt auch f&#252r Haushaltsangeh&#252rige von Personen mit einem positiven Schnelltest. Die Quarant&#228ne darf erst beendet werden, wenn ein nachfolgender PCR-Test ein negatives Ergebnis hat. Die positiv getestete Person hat zur Best&#252tigung oder auch Widerlegung Anspruch auf einen PCR-Test.
    </div>
         </div>
@@ -97,10 +122,7 @@ xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de" >
 </body>
     <script>
         //const queryString = window.location.search;
-        const urlParams = new URLSearchParams(window.location.search);
-        const name = urlParams.get('name');
-        const birthday = urlParams.get('birthday');
-        const address= urlParams.get('address');
+
         //alert(myParam);
         var today = new Date();
         var date = today.getDate()+ "." + (today.getMonth()+1) + "." + today.getFullYear();
@@ -109,5 +131,7 @@ xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de" >
         document.getElementById("name_el").innerText = name;
         document.getElementById("birthday_el").innerText = birthday;
         document.getElementById("address_el").innerText = address;
+        document.getElementById("address_el").innerText = address;
+        document.getElementById("qrcode").src = "https://chart.googleapis.com/chart?cht=qr&choe=UTF-8&chs=400x400&chl=" + encodeURIComponent("https://toman9.github.io?name=" + name + "&birthday=" + birthday + "&address=" + address);
     </script>
 </html>
